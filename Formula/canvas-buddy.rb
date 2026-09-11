@@ -10,6 +10,7 @@ class CanvasBuddy < Formula
   bottle do
     root_url "https://github.com/naman0r/homebrew-tap/releases/download/canvas-buddy-0.2.0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "e0ff5dd443253ab889085aade6a0d61d819787bb99261c5caffb64413e92f787"
+    sha256 cellar: :any_skip_relocation, sequoia:      "d43f109f43b28f5d389dd5aa1156a9df28a7ace668380ca34d4bfb44dbea9267"
   end
 
   depends_on "python@3.13"

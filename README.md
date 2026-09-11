@@ -7,6 +7,8 @@ brew install naman0r/tap/canvas-buddy
 canvas-buddy
 ```
 
+Prebuilt packages are available for Apple Silicon on macOS 14+ and Intel on macOS 15+. Other platforms may require a source build and an up-to-date compiler toolchain.
+
 Connect your own Canvas URL and access token in first-run setup. For model answers, use an authenticated Codex/OpenCode CLI or a local Ollama chat model. Ollama embeddings are optional; keyword search works without them. No models are downloaded by the formula.
 
 ```sh
@@ -18,7 +20,7 @@ brew upgrade naman0r/tap/canvas-buddy
 
 [Source, setup and privacy details](https://github.com/naman0r/canvas-buddy).
 
-The formula installs an isolated Python environment from a versioned source release and checksummed dependency archives. Uninstalling keeps your private Canvas data; see the app README for deletion instructions.
+The formula installs an isolated Python environment using checksummed prebuilt packages, with a versioned source release and pinned dependency archives as the fallback. Uninstalling keeps your private Canvas data; see the app README for deletion instructions.
 
 ## Maintainer checks
 
