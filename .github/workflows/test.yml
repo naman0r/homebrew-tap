@@ -2,16 +2,28 @@ name: Formula test
 on:
   push:
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
   install:
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        os: [macos-14, macos-15-intel]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - name: Use this checkout as the tap
         run: brew tap naman0r/tap "$GITHUB_WORKSPACE"
       - run: brew style naman0r/tap/canvas-buddy
-      - run: brew install --build-from-source naman0r/tap/canvas-buddy
+      - run: brew install --build-bottle naman0r/tap/canvas-buddy
       - run: brew test naman0r/tap/canvas-buddy
       - run: canvas-buddy self-test
+      - name: Build bottle
+        run: brew bottle --json --no-rebuild --root-url=https://github.com/naman0r/homebrew-tap/releases/download/canvas-buddy-0.2.0 naman0r/tap/canvas-buddy
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bottle-${{ matrix.os }}
+          path: |
+            *.bottle.tar.gz
+            *.bottle.json
