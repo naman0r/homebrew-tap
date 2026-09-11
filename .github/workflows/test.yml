@@ -1,0 +1,17 @@
+name: Formula test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use this checkout as the tap
+        run: brew tap naman0r/tap "$GITHUB_WORKSPACE"
+      - run: brew style naman0r/tap/canvas-buddy
+      - run: brew install --build-from-source naman0r/tap/canvas-buddy
+      - run: brew test naman0r/tap/canvas-buddy
+      - run: canvas-buddy self-test
