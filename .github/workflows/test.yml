@@ -8,6 +8,7 @@ permissions:
 jobs:
   install:
     strategy:
+      fail-fast: false
       matrix:
         os: [macos-14, macos-15-intel]
     runs-on: ${{ matrix.os }}
@@ -16,6 +17,11 @@ jobs:
       - name: Use this checkout as the tap
         run: brew tap naman0r/tap "$GITHUB_WORKSPACE"
       - run: brew style naman0r/tap/canvas-buddy
+      - name: Prepare Homebrew Python (runner has conflicting Python.org links)
+        run: |
+          brew install --overwrite python@3.13
+          brew postinstall python@3.13
+          "$(brew --prefix python@3.13)/bin/python3.13" -m pip --version
       - run: brew install --build-bottle naman0r/tap/canvas-buddy
       - run: brew test naman0r/tap/canvas-buddy
       - run: canvas-buddy self-test
