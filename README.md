@@ -9,7 +9,9 @@ canvas-buddy
 
 Prebuilt packages are available for Apple Silicon on macOS 14+ and Intel on macOS 15+. Other platforms may require a source build and an up-to-date compiler toolchain.
 
-Connect your own Canvas URL and access token in first-run setup. For model answers, use an authenticated Codex/OpenCode CLI or a local Ollama chat model. Ollama embeddings are optional; keyword search works without them. No models are downloaded by the formula.
+**Personal-testing release:** the current Canvas connection uses a personal token. Broader account onboarding needs OAuth; see the [launch review](https://github.com/naman0r/canvas-buddy/blob/main/docs/REVIEW.md). The source preview includes an offline fictional-data demo, which is not yet in this Homebrew release.
+
+For personal testing, connect your Canvas URL and access token in first-run setup. For model answers, use an authenticated Codex/OpenCode CLI or a local Ollama chat model. Ollama embeddings are optional; keyword search works without them. No models are downloaded by the formula.
 
 ```sh
 canvas-buddy doctor
