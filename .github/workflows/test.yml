@@ -26,7 +26,7 @@ jobs:
       - run: brew test naman0r/tap/canvas-buddy
       - run: canvas-buddy self-test
       - name: Build bottle
-        run: brew bottle --json --no-rebuild --root-url=https://github.com/naman0r/homebrew-tap/releases/download/canvas-buddy-0.2.0 naman0r/tap/canvas-buddy
+        run: brew bottle --json --no-rebuild --root-url=https://github.com/naman0r/homebrew-tap/releases/download/canvas-buddy-0.3.0 naman0r/tap/canvas-buddy
       - uses: actions/upload-artifact@v4
         with:
           name: bottle-${{ matrix.os }}

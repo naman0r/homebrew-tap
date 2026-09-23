@@ -3,15 +3,9 @@ class CanvasBuddy < Formula
 
   desc "Local terminal companion for Canvas LMS"
   homepage "https://github.com/naman0r/canvas-buddy"
-  url "https://github.com/naman0r/canvas-buddy/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "39eaa6e891ed62c2d6af87d2690a49feb1b42f9503b1562d2d9a7a82c8e0b66a"
+  url "https://github.com/naman0r/canvas-buddy/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "954c10e2bfec71b20fb533725382cdb0de9fe09796d0c7715c485cdbc35bf2f0"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/naman0r/homebrew-tap/releases/download/canvas-buddy-0.2.0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e0ff5dd443253ab889085aade6a0d61d819787bb99261c5caffb64413e92f787"
-    sha256 cellar: :any_skip_relocation, sequoia:      "d43f109f43b28f5d389dd5aa1156a9df28a7ace668380ca34d4bfb44dbea9267"
-  end
 
   depends_on "python@3.13"
 
