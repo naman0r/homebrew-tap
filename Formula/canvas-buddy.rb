@@ -7,6 +7,12 @@ class CanvasBuddy < Formula
   sha256 "b86508322aabe7609f194bbf856bd19a5247dcf42c1aff71140925a0c89c33e1"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/naman0r/homebrew-tap/releases/download/canvas-buddy-0.4.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "43efff83ec1ccb7f4c62df28181390a20f03d003c2cb4e0d455e8e64acbb075e"
+    sha256 cellar: :any_skip_relocation, sequoia:      "8b22f0403622c9bbb71ea7810717aaac08ac103b50eee5a1ffa730e2c66d9558"
+  end
+
   depends_on "python@3.13"
 
   resource "anyio" do
